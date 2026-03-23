@@ -22,31 +22,3 @@ You may need to update both your build tool settings as well as your IDE.
 
 
 Disconnected from the target VM, address: '127.0.0.1:49827', transport: 'socket'
-
-package com.urbanvogue.payment.simulator;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Binds the {@code payment.simulator.failure-reasons.*} properties
- * into a typed Map for use by {@link PaymentSimulator}.
- *
- * <p>Registered as a bean via {@code @EnableConfigurationProperties}
- * in {@link com.urbanvogue.payment.PaymentServiceApplication}.</p>
- */
-@ConfigurationProperties(prefix = "payment.simulator")
-public class PaymentSimulatorProperties {
-
-    private Map<String, Integer> failureReasons = new HashMap<>();
-
-    public Map<String, Integer> getFailureReasons() {
-        return failureReasons;
-    }
-
-    public void setFailureReasons(Map<String, Integer> failureReasons) {
-        this.failureReasons = failureReasons;
-    }
-}
