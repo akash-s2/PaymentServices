@@ -1,0 +1,16 @@
+#!/bin/sh
+# Maven Wrapper script
+# Adapted from https://github.com/apache/maven-wrapper
+
+set -e
+
+WRAPPER_JAR="$(dirname "$0")/.mvn/wrapper/maven-wrapper.jar"
+WRAPPER_PROPERTIES="$(dirname "$0")/.mvn/wrapper/maven-wrapper.properties"
+MAVEN_HOME="${HOME}/.m2/wrapper/dists"
+
+if [ ! -f "$WRAPPER_JAR" ]; then
+    echo "Error: Maven wrapper JAR not found at $WRAPPER_JAR"
+    exit 1
+fi
+
+exec java -jar "$WRAPPER_JAR" "$@"
